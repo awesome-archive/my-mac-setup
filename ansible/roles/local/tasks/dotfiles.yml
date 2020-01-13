@@ -1,20 +1,27 @@
 - name: Copy misc to .dotfiles
   copy:
-    src: misc
+    src: dotfiles/
     dest: ~/.dotfiles
     force: yes
 
-- name: Link bash_profile
+- name: Link gitconfig
   file:
-    src: ~/.dotfiles/misc/bash_profile
-    path: ~/.bash_profile
+    src: ~/.dotfiles/git/gitconfig
+    path: ~/.gitconfig
     state: link
     force: yes
 
-- name: Link zshrc
+- name: Link gitignore_global
   file:
-    src: ~/.dotfiles/misc/zshrc
-    path: ~/.zshrc
+    src: ~/.dotfiles/git/gitignore_global
+    path: ~/.gitignore_global
+    state: link
+    force: yes
+
+- name: Link hyper.js
+  file:
+    src: ~/.dotfiles/misc/hyper.js
+    path: ~/.hyper.js
     state: link
     force: yes
 
@@ -25,30 +32,31 @@
     state: link
     force: yes
 
-- name: Link gitconfig
-  file:
-    src: ~/.dotfiles/misc/git/gitconfig
-    path: ~/.gitconfig
-    state: link
-    force: yes
-
-- name: Link gitignore_global
-  file:
-    src: ~/.dotfiles/misc/git/gitignore_global
-    path: ~/.gitignore_global
-    state: link
-    force: yes
-
 - name: Link gemrc
   file:
-    src: ~/.dotfiles/misc/ruby/gemrc
+    src: ~/.dotfiles/ruby/gemrc
     path: ~/.gemrc
     state: link
     force: yes
 
-- name: Link hyper.js
+- name: Link bash_profile
   file:
-    src: ~/.dotfiles/misc/hyper.js
-    path: ~/.hyper.js
+    src: ~/.dotfiles/shell/bash_profile
+    path: ~/.bash_profile
     state: link
     force: yes
+
+- name: Link zshrc
+  file:
+    src: ~/.dotfiles/shell/zshrc
+    path: ~/.zshrc
+    state: link
+    force: yes
+
+- name: Link ssh-config
+  file:
+    src: ~/.dotfiles/ssh/ssh-config
+    path: ~/.ssh/config
+    state: link
+    force: yes
+    ignore: yes

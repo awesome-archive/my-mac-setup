@@ -14,14 +14,9 @@
     - hyper
     - jetbrains-toolbox
     - kap
-    - qlcolorcode
-    - qlmarkdown
     - qlprettypatch
-    - qlstephen
-    - quicklook-csv
     - quicklook-json
-    - sequel-pro
-    - sketch
+    - slack
     - spotify
     - visual-studio-code
     - vlc

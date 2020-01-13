@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC2124
 ANSIBLE_OPTS="$@"
 
 setup_xcode() {
@@ -31,7 +32,7 @@ setup_ansible() {
 
 setup_vim(){
   if [[ ! -f ~/.vimrc ]]; then
-    cp misc/vimrc ~/.vimrc
+    cp ansible/roles/local/tasks/dotfiles/misc/vimrc ~/.vimrc
   fi
 }
 

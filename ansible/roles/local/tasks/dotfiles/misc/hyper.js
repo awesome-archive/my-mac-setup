@@ -5,9 +5,10 @@ module.exports = {
     // verminal: {
     //   fontSize: 15
     // },
-    hyperTransparentDynamic: {
-      alpha: 0.7 // default 50%
-    },
+    // hyperTransparentDynamic: {
+    //   alpha: 0.5 // default 50%
+    // },
+    rainglow: 'loyal-contrast',
     hyperCustomTouchbar: [
       // if you just need a single button then don't add options array
       { label: 'clear', command: 'clear', backgroundColor: '#d13232' },
@@ -43,7 +44,7 @@ module.exports = {
     updateChannel: 'stable', // 'stable' or 'canary'
     fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     fontWeight: 'normal',
-    fontSize: 15,
+    fontSize: 14,
     fontWeightBold: 'bold',
     cursorColor: 'rgba(1, 112, 178, 0.5)',
     cursorAccentColor: '#000',
@@ -51,7 +52,7 @@ module.exports = {
     cursorBlink: true,
     foregroundColor: '#96A8B5',
     backgroundColor: '#000',
-    selectionColor: 'rgba(248,28,229,0.3)',
+    selectionColor: 'rgba(255,255,255,0.3)',
     borderColor: '#13222E',
 
     css: '',
@@ -92,8 +93,15 @@ module.exports = {
     defaultSSHApp: true,
   },
 
-  plugins: [// 'hyperline', //'verminal', //'hyperpower', //'hyper-transparent-dynamic'
-    'hyperterm-close-on-left', 'hyper-search', "hyperlinks", "hyper-alt-click", "hyperterm-safepaste", "hyper-confirm", "hyper-savetext", "hyper-custom-touchbar", "hyperblue"],
+  plugins: [
+    'hyperterm-close-on-left',
+    'hyper-search',
+    'hyperlinks',
+    'hyper-confirm',
+    'hyper-savetext',
+    'hyper-custom-touchbar',
+    'rainglow'
+  ],
 
   localPlugins: [],
 

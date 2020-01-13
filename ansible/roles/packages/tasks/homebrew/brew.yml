@@ -7,13 +7,10 @@
     - asciinema
     - asciiquarium
     - curl
-    - figlet
-    - fortune
     - git
-    - nginx
-    - postgresql
     - redis
     - sl
     - sqlite
+    - thefuck
     - tree
     - wget

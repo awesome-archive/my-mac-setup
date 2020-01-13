@@ -11,24 +11,8 @@ export LANG=en_US.UTF-8
 plugins=(osx git zsh-completions zsh-syntax-highlighting aws rbenv ruby rails pyenv python pip bundler gem brew node npm yarn web-search)
 
 # Library
-
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
-
-# Development
-
-# rbenv for ruby
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# pyenv for python
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# Config JAVA
-# export JAVA_HOME=$(/usr/libexec/java_home)
-
-# NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 # Homebrew ZSH Autocomplete
 if type brew &>/dev/null; then
@@ -38,14 +22,27 @@ fi
 # zsh-completions
 autoload -U compinit && compinit
 
-source $ZSH/oh-my-zsh.sh
+# Development
+# ASDF
+# . $(brew --prefix asdf)/asdf.sh
+# . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
-# Another Library
+# thefuck
+# https://github.com/nvbn/thefuck
+# Magnificent app which corrects your previous console command.
+eval $(thefuck --alias)
 
-# Python Lib
-# export PATH="/Users/nijicha/.local/bin:$PATH"
+# rbenv for ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# alias
+# NVM
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
+
+# Load oh-my-zsh.sh
+. $ZSH/oh-my-zsh.sh
+
+# Alias command
 alias hyperconfig="code ~/.zshrc && code ~/.hyper.js"
 alias nginxconfig="code /usr/local/etc/nginx/nginx.conf"
 alias fix_maria_db="mkdir /usr/local/etc/my.cnf.d"
